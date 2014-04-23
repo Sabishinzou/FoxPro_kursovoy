@@ -1,0 +1,33 @@
+
+*************************************************************
+
+CLEAR EVENTS
+CLEAR
+SET TALK OFF
+set status off
+SET DELETED ON 
+SET SAFETY OFF
+*SET EXCLUSIVE OFF
+SET DATE GERMAN
+SET CENTURY ON
+
+
+DO menu_ktp.mpr
+READ EVENTS
+CLEAR WINDOWS
+RELEASE WINDOW CALCULATOR
+CLOSE DATABASES
+clear events
+SET SYSMENU TO DEFAULT
+*QUIT
+*********************************************************************
+*********************************************************************
+* Преобразование букв символьной строки в прописные *
+*********************************************************************
+FUNCTION  RUpper
+LPARAMETER  cStr
+#DEFINE  cLower   "abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+#DEFINE  cUpper   "ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+RETURN( CHRTRAN( ALLTRIM( cStr), cLower, cUpper ) )
+
+****************
